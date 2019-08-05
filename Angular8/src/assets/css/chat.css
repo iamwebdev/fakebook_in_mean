@@ -1,0 +1,39 @@
+.basic-textarea textarea {
+  height: auto;
+}
+
+.card.chat-room .friend-list li {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.card.chat-room .friend-list li:last-of-type {
+  border-bottom: none;
+}
+
+.card.chat-room img.rounded-circle {
+  border-radius: 50%;
+}
+
+.card.chat-room img.avatar {
+  height: 6rem;
+  width: 6rem;
+}
+
+.card.chat-room .text-small {
+  font-size: 0.95rem;
+}
+
+.card.chat-room .text-smaller {
+  font-size: 0.75rem;
+}
+
+h3 {
+  cursor: pointer;
+  background: #62b6ff;
+  text-align: center;
+  font-family: monospace;
+}
+h3:hover{
+  background: #449eec;
+  
+}

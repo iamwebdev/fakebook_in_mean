@@ -1,0 +1,59 @@
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/brands.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel="stylesheet" href="../../assets/css/profile.css">
+<link rel="stylesheet" href="../../assets/css/friendList.css">
+
+<header>
+        <div class="tb">
+            <div class="td" id="logo">
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+            </div>
+            <div class="td" id="search-form">
+                <form method="get" action="#">
+                    <input type="text" placeholder="Search Fakebook">
+                    <button type="submit"><i class="material-icons">search</i></button>
+                </form>
+            </div>
+            <div class="td" id="f-name-l"><span>{{ authDetails.name }}</span></div>
+            <div class="td" id="i-links">
+                <div class="tb">
+                    <div class="td">
+                        <a href="#" id="p-link">
+                            <img src=".././../assets/images/user.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <h1 style="text-align: center;font-family:cursive">Friend List</h1>
+    <div class = "wrapper">
+        <div class = "content-wrapper"> 
+            <div class = "group"> 
+            <div class = "member" *ngFor="let friend of list">
+                <div class = "group-card">
+                    <div class = "profile-info">
+                        <div class = "profile-pic" style="background-image: url('../../assets/images/user.png')">
+                        </div>
+                        <div class = "name-frnd">{{ friend.name }}
+                        </div>
+                        <button (click)="setFormValues(friend._id)" data-toggle="modal" data-target="#login-modal" type="button" class="btn btn-info">Send Message</button>
+                    </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="loginmodal-container message">
+                <form method="POST" [formGroup]="messageForm" (ngSubmit)="sendMesage(messageForm.value)">
+                    <input type="hidden" id="reciever" name="reciever" formControlName="reciever"> 
+                    <textarea name="message" id="message" formControlName="message" class="form-control" name="message" placeholder="Type your message"></textarea><br>
+                    <input type="submit" class="login loginmodal-submit" value="Send">
+                </form>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="../../assets/css/suggestion.css">
+<link rel="stylesheet" href="../../assets/css/profile.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/brands.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+<header>
+    <div class="tb">
+        <div class="td" id="logo">
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+        </div>
+        <div class="td" id="search-form">
+            <form method="get" action="#">
+                <input type="text" placeholder="Search Fakebook">
+                <button type="submit"><i class="material-icons">search</i></button>
+            </form>
+        </div>
+        <div class="td" id="f-name-l"><span>{{ authDetails.name }}</span></div>
+        <div class="td" id="i-links">
+            <div class="tb">
+                <div class="td">
+                    <a href="#" id="p-link">
+                        <img src=".././../assets/images/user.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<h1>Friend Suggestions</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let suggestion of suggestions">
+      <div class="well">
+        <img src="../../assets/images/user.png" class="avatar" alt="avatar">
+        <h4>{{ suggestion.name }}</h4>
+        <p class="cat"><strong>Category: </strong>Mechanic</p>
+        <p class="date"><strong>Date: </strong>12/23/2014 <i class="fa fa-question-circle">
+          <span>Date this added to your listing</span>
+        </i></p>
+        <p class="date"><strong>Last Checked: </strong>2 hours ago <i class="fa fa-question-circle">
+          <span class="shiftLeft">When you last opened this post</span>
+        </i></p>
+        <p class="stats"><i class="fa fa-file">
+          <span>Total posts by this user</span>
+        </i> 24 <i class="fa fa-comment">
+          <span>Total comments on this post</span>
+        </i> 948</p>
+        <ul class="bottom">
+          <li class="fb"><input type="submit" value="Add Friend" class="btn btn-info"  (click)="addFriend(suggestion._id)"></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>

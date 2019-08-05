@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="../../assets/css/sent.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/brands.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel="stylesheet" href="../../assets/css/profile.css">
+<header>
+        <div class="tb">
+            <div class="td" id="logo">
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+            </div>
+            <div class="td" id="search-form">
+                <form method="get" action="#">
+                    <input type="text" placeholder="Search Fakebook">
+                    <button type="submit"><i class="material-icons">search</i></button>
+                </form>
+            </div>
+            <div class="td" id="f-name-l"><span>{{ authDetails.name }}</span></div>
+            <div class="td" id="i-links">
+                <div class="tb">
+                    <div class="td">
+                        <a href="#" id="p-link">
+                            <img src=".././../assets/images/user.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper back">
+    <h1>Sent Requests</h1>
+        <div class="profile" *ngFor="let friend of sentFriendList">
+            <a (click)="removeSentRequest(friend._id )">
+                <img src="../../assets/images/user.png" alt="Profile">
+            </a>
+            <span>{{ friend['reciever_id'].name }}</span>
+        </div>
+</div>

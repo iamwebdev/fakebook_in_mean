@@ -1,0 +1,117 @@
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/brands.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel="stylesheet" href="../../assets/css/profile.css">
+
+<main>
+    <header>
+        <div class="tb">
+            <div class="td" id="logo">
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+            </div>
+            <div class="td" id="search-form">
+                <form method="get" action="#">
+                    <input type="text" placeholder="Search Fakebook">
+                    <button type="submit"><i class="material-icons">search</i></button>
+                </form>
+            </div>
+            <div class="td" id="f-name-l"><span>{{ authDetails.name }}</span></div>
+            <div class="td" id="i-links">
+                <div class="tb">
+                    <div class="td">
+                        <a href="#" id="p-link">
+                            <img src=".././../assets/images/user.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="profile-upper">
+        <div id="profile-banner-image">
+            <img src="../../assets/images/cover.jpg">
+        </div>
+        <div id="profile-d">
+            <div id="profile-pic">
+                <img src="../../assets/images/user.png">    
+            </div>
+            <div id="u-name">{{ authDetails.name }}</div>
+            
+            <div id="edit-profile"><i class="material-icons">camera_alt</i></div>
+        </div>
+        <div id="black-grd"></div>
+    </div>
+    <div id="main-content">
+        <div class="tb">
+            <div class="td" id="l-col">                   
+                <div class="l-cnt">
+                    <div class="cnt-label">
+                        <i class="l-i" id="l-i-i"></i>
+                        <span>Intro</span>
+                        <div class="lb-action"><i class="material-icons">edit</i></div>
+                    </div>
+                    <div id="i-box">
+                        <div id="intro-line">{{ authDetails.name }}</div>
+                        <div id="u-occ">This is dummy intro.You can add more in this app.</div>
+                        <div id="u-loc"><i class="material-icons">location_on</i>
+                            <a href="#">California</a>, <a href="#">USA</a>&nbsp;&nbsp;
+                            <a href="#" class="btn btn-warning" (click)="logMeOut()">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="td" id="m-col">
+                <div class="m-mrg" id="p-tabs">
+                    <div class="tb">
+                        <div class="td">
+                            <div class="tb" id="p-tabs-m">
+                                <div class="td active"><i class="material-icons">av_timer</i><span><a routerLink="/my-profile">TIMELINE</a></span></div>
+                                <div class="td"><i class="material-icons">people</i><span><a routerLink="/friend-list">FRIENDS</a></span></div>
+                                <div class="td"><i class="material-icons">photo</i><span><a routerLink="/chat">CHAT</a></span></div>
+                                <div class="td"><i class="material-icons">explore</i><span><a routerLink="/friend-suggestions">SUGGESTIONS</a></span></div>
+                                <div class="td"><i class="material-icons">archive</i><span><a routerLink="/friend-suggestions">SENT</a></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-mrg" id="composer">
+                    <div id="c-tabs-cvr">
+                        <div class="tb" id="c-tabs">
+                            <div class="td active"><i class="material-icons">subject</i><span>Make Post</span></div>
+                        </div>
+                    </div>
+                    <div id="c-c-main">
+                        <form action="POST" [formGroup]="postForm" (ngSubmit)="sharePost(postForm.value)">
+                            <div class="tb">
+                                <div class="td" id="p-c-i"><img src="../../assets/images/user.png" alt="Profile pic"></div>
+                                <div class="td" id="c-inp">
+                                    <input type="text" formControlName="post" placeholder="What's on your mind?">
+                                </div>
+                                <input type="submit" value="Share" class="btn btn-primary">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div *ngIf="myPosts.length > 0">
+                    <div>
+                    <div class="post" *ngFor="let myPost of myPosts">
+                        <div class="tb">
+                            <a href="#" class="td p-p-pic"><img src="../../assets/images/user.png"></a>
+                            <div class="td p-r-hdr">
+                                <div class="p-u-info">
+                                    <a href="#">{{ myPost.user_id['name'] }}</a> shared a post
+                                </div>
+                                <div class="p-dt">
+                                    <i class="material-icons">calendar_today</i>
+                                    <span>{{ myPost.post_date }}</span>
+                                </div>
+                                <p>{{ myPost.post }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

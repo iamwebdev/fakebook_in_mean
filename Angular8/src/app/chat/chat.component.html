@@ -1,0 +1,75 @@
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/brands.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel="stylesheet" href="../../assets/css/profile.css">
+<link rel="stylesheet" href="../../assets/css/chat.css">
+<!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css'> -->
+<header>
+        <div class="tb">
+            <div class="td" id="logo">
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+            </div>
+            <div class="td" id="search-form">
+                <form method="get" action="#">
+                    <input type="text" placeholder="Search Fakebook">
+                    <button type="submit"><i class="material-icons">search</i></button>
+                </form>
+            </div>
+            <div class="td" id="f-name-l"><span>{{ authDetails.name }}</span></div>
+            <div class="td" id="i-links">
+                <div class="tb">
+                    <div class="td">
+                        <a href="#" id="p-link">
+                            <img src=".././../assets/images/user.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<div class="card chat-room">
+        <div class="card-body">
+            <div class="row px-lg-2 px-2">
+                <div class="col-md-4 col-xl-4 px-0">
+                    <h6 class="font-weight-bold mb-3 text-center text-lg-left">Chat</h6>
+                    <div class="white z-depth-1 px-3 pt-3 pb-0">
+                        <ul class="list-unstyled friend-list">
+                            <li (click)="loadConversation(friend._id)" class="grey lighten-3 p-2" *ngFor="let friend of friends">
+                                <div class="text-small">
+                                    <h3>{{ friend.name }}</h3>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 10px;" class="col-md-8 col-xl-8 pl-md-3 px-lg-auto px-0">
+                    <div class="chat-message">
+                        <ul class="list-unstyled chat">
+                            <li *ngFor="let chatMessage of chatMessages" class="d-flex justify-content-between mb-4">
+                                <img src="../../assets/images/user.png" alt="avatar" class="avatar rounded-circle mr-2 ml-lg-3 ml-0 z-depth-1">
+                                <div class="chat-body white p-3 ml-2 z-depth-1">
+                                    <div class="header">
+                                        <strong class="primary-font">{{ chatMessage.send_id['name'] }}</strong>
+                                    </div>
+                                    <p class="mb-0">
+                                       Message: {{ chatMessage.message }}
+                                    </p>
+                                    <hr class="w-100">
+                                </div>
+                            </li>
+                            <li class="white" *ngIf="chatMessages.length > 0">
+                                <form action="POST" [formGroup]="messageForm" (ngSubmit)="replyToMessage(messageForm.value)">
+                                    <div class="form-group basic-textarea">
+                                        <textarea formControlName="message" class="form-control pl-2 my-0" id="exampleFormControlTextarea2" rows="3" placeholder="Type your message here..."></textarea>
+                                    </div>
+                                    <input type="hidden" formControlName="reciever" value="">
+                                    <input type="submit" class="btn btn-info" value="Send Message">
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

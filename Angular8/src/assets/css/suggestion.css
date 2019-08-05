@@ -1,0 +1,186 @@
+body {
+  padding: 20px;
+  background: #f2f3f8;
+}
+h1 {
+  text-shadow: 0 1px 1px #fff;
+  text-align: center;
+}
+/* Search Bar Section */
+a {
+  color: #3B97D6;
+}
+a.btn {
+  color: #fff;
+}
+a:hover {
+  text-decoration: none;
+}
+a.btn:hover, a.btn:active, a.btn:focus {
+  color: #fff;
+}
+
+/* Grid */
+.row {
+  -moz-column-width: 25em;
+  -webkit-column-width: 25em;
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em; 
+}
+.row > .col-md-4 {
+  display: inline-block;
+  padding: .33rem;
+  width: 100%; 
+  float: none;
+}
+.well {
+  position:relative;
+  display: block;
+  padding: 0;
+  background: #fff;
+  border-radius: 2px;
+  color: #333;
+}
+.well h3 {
+  padding: 0 10px;
+  margin-top: 10px;
+}
+.well p {
+}
+.well blockquote {
+  margin-left: 20px;
+  padding: 0 10px 0 20px;
+}
+.well cite {
+  text-align: right;
+  display: block;
+  padding: 0 10px 10px 10px;
+}
+.well img {
+  width: 40%;
+  height: auto;
+  float: left;
+  margin: 6px 6px 0 6px;
+  border-radius: 2px;
+}
+.well ul {
+  width: 100%;
+  clear: left;
+  list-style: none;
+  height: 36px;
+  padding: 0;
+}
+.well ul li {
+  display: inline-block;
+  float: left;
+  background: #3B97D6;
+  border-radius: 2px;
+  margin-right: 6px;
+  margin-top: 6px;
+}
+.well ul li:hover {
+  background: #65addf;
+}
+.well ul li.fb {
+  margin-left: 6px;
+}
+.well ul li.getPosts {
+  
+}
+.well ul li.del {
+  background: #cd3333;
+  float: right;
+}
+.well ul li.del:hover {
+  background: #d75c5c;
+}
+.well .fa-question-circle {
+  color: #999;
+}
+.well .fa-question-circle:hover {
+  color: #000;
+  cursor: pointer;
+}
+.well .fa {
+  position: relative;
+}
+.well .fa span {
+  display: none;
+  position: absolute;
+  width: 140px;
+  left: -64px;
+  top: -38px;
+  background: #3B97D6;
+  color: #fff;
+  padding: 4px;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+.well .fa:hover span, .well .fa span:hover {
+  display: inline-block;
+}
+.well .fa span:after {
+  content: " ";
+  position: absolute;
+  left: 64px;
+  bottom: -5px;
+  border-top: 5px solid #3B97D6;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+.well .fa span.shiftLeft {
+  left: -110px;
+}
+.well .fa span.shiftLeft:after {
+  left: 110px;
+}
+.alert {
+  width: 160px;
+  background: #fff;
+  position: fixed;
+  left: 50%;
+  margin-left: -80px;
+  top: 200px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.5);
+  text-align: center;
+}
+.alert a {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  margin-top: 10px
+}
+.pagination {
+  text-align: center;
+  margin: 20px auto;
+  width: 600px;
+  display: block;
+}
+.pagination a, .pagination strong {
+  background: #fff;
+  display: inline-block;
+  margin-right: 3px;
+  padding: 4px 12px;
+  text-decoration: none;
+  line-height: 1.5em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: solid 1px #e0e0e0;
+}
+.pagination a:hover {
+  background-color: #3B97D6;
+  color: #fff;
+}
+.pagination a:active {
+	background: rgba(190, 190, 190, 0.75);
+}
+.pagination strong {
+  color: #fff;
+  background-color: #3B97D6;
+}
+.stats {
+  margin-bottom: 0;
+}

@@ -1,0 +1,42 @@
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/brands.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel="stylesheet" href="../../assets/css/profile.css">
+<link rel="stylesheet" href="../../assets/css/rec.css">
+
+<header>
+        <div class="tb">
+            <div class="td" id="logo">
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+            </div>
+            <div class="td" id="search-form">
+                <form method="get" action="#">
+                    <input type="text" placeholder="Search Fakebook">
+                    <button type="submit"><i class="material-icons">search</i></button>
+                </form>
+            </div>
+            <div class="td" id="f-name-l"><span>{{ authDetails.name }}</span></div>
+            <div class="td" id="i-links">
+                <div class="tb">
+                    <div class="td">
+                        <a href="#" id="p-link">
+                            <img src=".././../assets/images/user.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<h1 class="text-center">Requests Recieved</h1>
+<div class="container">
+    <div id="wrapper">
+        <div class="kolbod">
+            <div class="kolsah" *ngFor="let friend of list">
+                <div class="sahabat">
+                <img src="../../assets/images/user.png" class="proff"><h1><a href="">{{ friend['sender_id'].name }}</a></h1><hr/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a (click)="actionOnRequest('accept',friend['sender_id']._id)" class="btn btn-success">Accept</a>&nbsp;&nbsp;<a (click)="actionOnRequest('reject',friend['sender_id']._id)" class="btn btn-danger">Reject</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
